@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid + Media Queries</title>
+    <style>
+        .container {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-areas:
+                'navbar navbar navbar navbar'
+                'section section section section'
+                'footer footer footer footer';
+        }
+
+
+        @media only screen and (max-width:300px) {
+            body {
+
+                background-color: rgb(212, 97, 106);
+            }
+            .container {
+                grid-template-areas:
+                    'navbar navbar navbar navbar'
+                    'section section section section'
+                    'aside aside aside aside'
+                    'footer footer footer footer';
+            }
+            span{
+                display: block;
+                text-align: center;
+            }
+        }
+
+        @media only screen and (min-width:300px) and (max-width:500px) {
+            body {
+
+                background-color: rgb(212, 97, 106);
+            }
+            
+            .container {
+                grid-template-areas:
+                    'navbar navbar navbar navbar'
+                    'section section section section'
+                    'aside aside aside aside'
+                    'footer footer footer footer';
+            }
+            aside{
+                display: none;
+            }
+            span{
+                display: block;
+                text-align: center;
+            }
+            
+
+        }
+
+        @media (min-width:500px) and (max-width:800px) {
+            body {
+
+                background-color: rgb(75, 67, 68);
+            }
+
+            .container {
+                grid-template-areas:
+                    'navbar navbar navbar navbar'
+                    'section section section section'
+                    'aside aside aside aside'
+                    'footer footer footer footer';
+            }
+            span{
+                display: block;
+                text-align: center;
+            }
+        }
+
+
+
+        @media (min-width:800px) {
+            body {
+
+                background-color: rgb(155, 184, 77);
+            }
+        }
+
+        .bdr {
+            border: 2px solid black;
+            padding: 10px 23px;
+            background-color: antiquewhite;
+        }
+
+        .item {
+            background-color: rgb(199, 230, 116);
+            border: 3px solid black;
+            padding: 12px 23px;
+        }
+
+        navbar {
+            grid-area: navbar;
+        }
+
+        section {
+            grid-area: section;
+        }
+
+        aside {
+            grid-area: aside;
+        }
+
+        footer {
+            grid-area: footer;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="bdr">
+            <span>Home</span>
+            <span>About</span>
+            <span>Services</span>
+            <span>Contact</span>
+            Home About Contact
+        </nav>
+        <section class="bdr">
+            <h2>Learn CSS in Hindi</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates iste porro corrupti placeat explicabo quaerat, quasi iure labore tempore vero soluta quam delectus architecto quae blanditiis minima ea at ex asperiores dolore magnam consequuntur? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias commodi necessitatibus nam magnam atque! Aperiam excepturi illo soluta corporis, quos dolor illum ad doloremque vero placeat ex consectetur iure debitis quasi neque inventore facere ipsa quaerat error, alias nesciunt sint? Esse, reprehenderit tempore soluta dolorum modi asperiores eveniet quae sunt? Facilis consectetur perferendis illo quibusdam fugit earum, esse itaque recusandae repellendus tenetur debitis beatae reiciendis saepe, dolore accusantium labore ratione sunt culpa adipisci voluptatibus velit repellat. Nisi ea enim recusandae distinctio laudantium illum, provident iusto nesciunt mollitia voluptatem nulla perferendis atque eius sit neque placeat vitae illo odio aperiam corporis iste accusantium dolorem omnis incidunt. Laboriosam obcaecati aliquam pariatur, exercitationem eaque quas praesentium nobis repellendus provident ipsa dolores, eligendi, suscipit voluptate consectetur.</p>
+        </section>
+        <aside class="bdr">
+            <h1>More about us</h1>
+        </aside>
+    </div>
+    <footer class="bdr">Copyright CodewithDarshani 2020</footer>
+</body>
+
+</html>
